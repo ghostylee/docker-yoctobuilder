@@ -1,5 +1,5 @@
 # docker-yoctobuilder
-yocto build environment base on ubuntu 16:04
+yocto build environment based on ubuntu 16.04
 ## How to use
 ```
 cd $PROJECT_ROOT
