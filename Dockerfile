@@ -4,7 +4,7 @@ MAINTAINER Li Song "ghosty.lee.1984@gmail.com"
 RUN apt-get update && apt-get install -y \
         gawk wget git-core diffstat unzip texinfo gcc-multilib \
         build-essential chrpath socat cpio python python3 python3-pip \
-        python-pexpect libsdl1.2-dev xterm curl locales
+        python-pexpect libsdl1.2-dev xterm curl locales ping
 
 RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
