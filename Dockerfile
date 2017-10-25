@@ -26,5 +26,6 @@ USER worker
 ENV HOME /home/worker
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
+ENV JAVA_HOME /usr/lib/jvm/open-jdk
 WORKDIR /home/worker/building
 CMD /bin/bash
