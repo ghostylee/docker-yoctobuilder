@@ -1,6 +1,9 @@
 FROM ubuntu:16.04
 MAINTAINER Li Song "ghosty.lee.1984@gmail.com"
 
+RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
+    dpkg-reconfigure -p critical dash
+
 RUN apt-get update && apt-get install -y \
         gawk wget git-core diffstat unzip texinfo gcc-multilib \
         build-essential chrpath socat cpio python python3 python3-pip \
