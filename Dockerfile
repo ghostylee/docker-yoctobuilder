@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
         build-essential chrpath socat cpio python python3 python3-pip \
         python-pexpect libsdl1.2-dev xterm curl locales iputils-ping \
         openjdk-8-jdk flex bison antlr3 libantlr3c-dev maven python-dev python3-dev \
-        python-gobject python-gtk2 libcurl3
+        python-gobject python-gtk2 libcurl3 screen
 
 RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
