@@ -1,6 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Li Song "ghosty.lee.1984@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
     dpkg-reconfigure -p critical dash
 
@@ -9,9 +10,9 @@ RUN apt-get update && apt-get install -y \
         build-essential chrpath socat cpio python python3 python3-pip \
         python-pexpect libsdl1.2-dev xterm curl locales iputils-ping \
         openjdk-8-jdk flex bison antlr3 libantlr3c-dev maven python-dev python3-dev \
-        python-gobject python-gtk2 libcurl3 screen xvfb
+        python-gobject libcurl4 screen xvfb
 
-RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
 RUN locale-gen en_US.UTF-8 && \
