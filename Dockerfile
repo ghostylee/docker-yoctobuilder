@@ -1,5 +1,4 @@
-FROM ubuntu:20.04
-MAINTAINER Li Song "ghosty.lee.1984@gmail.com"
+FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
@@ -7,10 +6,10 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
 
 RUN apt-get update && apt-get install -y \
         gawk wget git-core diffstat unzip texinfo gcc-multilib \
-        build-essential chrpath socat cpio python python3 python3-pip \
-        python-pexpect libsdl1.2-dev xterm curl locales iputils-ping \
-        openjdk-8-jdk flex bison antlr3 libantlr3c-dev maven python-dev python3-dev \
-        python-gobject libcurl4 screen xvfb zstd liblz4-tool
+        build-essential chrpath socat cpio python3 python3-pip \
+        libsdl1.2-dev xterm curl locales iputils-ping \
+        openjdk-8-jdk flex bison antlr3 libantlr3c-dev maven python3-dev \
+        libcurl4 screen xvfb zstd liblz4-tool ostree ostree-push file
 
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
