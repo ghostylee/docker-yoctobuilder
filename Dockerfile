@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
         openjdk-8-jdk flex bison antlr3 libantlr3c-dev maven python3-dev \
         libcurl4 screen xvfb zstd liblz4-tool ostree ostree-push file
 
+RUN wget -qO - https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key | apt-key add -
+RUN echo "deb https://releases.jfrog.io/artifactory/jfrog-debs focal contrib" | tee -a /etc/apt/sources.list;
+RUN apt-get update && apt install -y jfrog-cli
+
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
